@@ -1,26 +1,44 @@
-# git-faker
+# Daily Commit Your Git
 
-TODO: A short description of what git-faker does.
+Daily Commit Your Git provides a human-like automation tool to maintain your GitHub contribution grid. By generating a random number of commits, it creates a natural variation in the green wall's intensity. Furthermore, it significantly reduces activity on weekends to better simulate a healthy work-life balance.
 
 ## Installation
 
-TODO: Instructions on how to install git-faker.
+1.  **Fork** this repository.
+2.  **Enable Actions**: Go to the `Actions` tab of your forked repo and click **"Enable"**.
+3.  **Permissions**:
+    * Navigate to `Settings` > `Actions` > `General`.
+    * Scroll to **Workflow permissions**.
+    * Select **"Read and write permissions"** and hit **Save**. 💾
+4.  **First Run**: Go back to `Actions`, select **Daily Auto Commit**, and click **Run workflow** to see your first green brick! 🧱
 
-## Usage
+##  Customization
 
-TODO: How to use git-faker.
+You can tweak the "vibe" of your commits in `auto_commit.py`:
 
-## Examples
+```python
+# Change the numbers to fit your style!
+if weekday < 5:
+    commit_count = random.randint(0, 5) # Weekday range
+else:
+    # Weekend logic
+    if random.random() < 0.75:
+        commit_count = 0 # Most weekends off
+```
 
-TODO: Provide examples of git-faker in use.
+##  Project Structure
 
-## Development
+* `.github/workflows/daily_commit.yml`: The "alarm clock" that triggers the script.
+* `auto_commit.py`: The brain that handles the logic and Git commands.
+* `data.txt`: The log file where the automated changes are recorded.
 
-TODO: Guidelines for contributing to the project.
+##  License
 
-## License
+Distributed under the **MIT License**. Use it for fun, learning, and aesthetic purposes! 
 
-TODO: Include license information.
+---
 
+### 💡 Pro Tip
+To see your private contributions on your profile, make sure to go to your **Contribution Settings** (above the green wall on your profile) and check **"Private contributions"**.
 
-**Note:** Contributors are encouraged to fill in all TODO sections with appropriate details.
+Happy coding! 💻✨ 
